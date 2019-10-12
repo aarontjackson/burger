@@ -4,13 +4,13 @@ var express = require('express');
 var router = express.Router();
 
 // import the model (burgers.js) to use the database functions
-var burgers = require('../models/burger.js');
+var burger = require('../models/burger.js');
 
 // create all routes and set up logic within those routes.
 router.get("/", function(req, res){
     burger.all(function(data) {
         var routeObject = {
-            brugers: data
+            burgers: data
         };
         console.log(routeObject);
         res.render("index", routeObject);   
@@ -38,7 +38,7 @@ router.put("api/burgers/:id", function(req, res) {
     }, condition, function(result) {
         if (result.changedRows == 0) {
             // if ID does not exist display 404
-            return res.status(404).end();
+          return res.status(404).end();
         } else{
             res.status(200).end();
         }

@@ -23,15 +23,18 @@ insertOne: function(table, cols, vals, cb) {
         vals.unshift(tableName)
 
     connection.query(sqlQuery, vals, function(err, result){
-        cb(result)
-    })
+        if (err) {
+            throw err;
+        }
+        cb(result);
+    });
 },
 
 updateOne: function(table, objColvals, condition, cb) {
     var sqlQuery = "UPDATE ?? ("
     sqlQuery += " SET ("
     sqlQuery += objtoSql(objcolvals) + ") "
-    sqlQuery += "WHERE ("
+    sqlQuery += " WHERE ("
     sqlQuery += condition + ")"
 
     vals.unshift(tableName)
@@ -43,6 +46,19 @@ connection.query(sqlQuery, function(err, result) {
 
     cb(result);
 });
+},
+
+delete: function(table, condition, cb) {
+    var sqlQuery = "DELETE FROM ?? ("
+    sqlQuery += " WHERE ("
+    sqlQuery += condition + ")"
+
+    connection.query(sqlQuery, function(err, result){
+        if (err) {
+            throw err;
+        }
+        cb(result);
+    })
 }
 
 };
@@ -52,7 +68,7 @@ function printQMarks(vals) {
     for (let i = 0; i < array.length; i++) {
         newArr.push('?')
     }
-    return newArr.toString()
+    return newArr.toString();
 }
 
 module.exports = orm;
