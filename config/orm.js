@@ -1,3 +1,4 @@
+// set up connection to connection.js file
 var connection = require('../config/connection.js');
 
 // object for all our SQL statement functions
@@ -26,7 +27,7 @@ insertOne: function(table, cols, vals, cb) {
     })
 },
 
-updateOne: function(table, objcolvals, condition, cb) {
+updateOne: function(table, objColvals, condition, cb) {
     var sqlQuery = "UPDATE ?? ("
     sqlQuery += " SET ("
     sqlQuery += objtoSql(objcolvals) + ") "
