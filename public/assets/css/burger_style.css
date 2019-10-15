@@ -6,7 +6,64 @@ section.add {
     float: right;
 }
 
-.container {
+body {
     background-image: url(../img/burger_background.jpeg);
-    
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    filter: alpha(opacity=50);
+    background-color: rgba(0, 0, 0, 0.4) 
+}
+h1 {
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 48px;
+    color: white;
+}
+#add h2 {
+    text-align: center;
+}
+#devoured h2{
+    text-align: center;
+   
+}
+#devoured {
+    border: 1px solid tan;
+    border-radius: 4px;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    color: white;
+    padding: 0, 0, 0, 10px;
+    font-family: 'Anton', sans-serif;
+}
+#eaten {
+    border: 1px solid tan;
+    border-radius: 4px;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    color: white;
+    padding: 0, 0, 0, 10px;
+    font-family: 'Anton', sans-serif;
+}
+#add {
+    border: 1px solid tan;
+    border-radius: 4px;
+    /* background-color: rgba(0, 0, 0, 0.7); */
+    color: white;
+    font-family: 'Anton', sans-serif;
+}
+#burger_list {
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 150px;
+    background-color: rgba(210, 180, 140, 0.9);
+}
+#add-btn {
+    display: block;
+    margin: auto;
 }

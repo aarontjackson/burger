@@ -4,8 +4,6 @@ $(function(){
     $(".create-form").on("submit", function(event) {
         event.preventDefault();
 
-        alert("hello world");
-
         var newBurger = {
             burger_name: $("#newburger").val().trim(),
             devoured: 0

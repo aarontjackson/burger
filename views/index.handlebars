@@ -1,69 +1,75 @@
+
 <h1>Eat-Da-Burger!</h1>
 
+
 <div class="container">
-  <div class="row">
-    <div class="col">
-<section class="devoured">
-  <h2>Are you going to devour da burger?!</h2>
-  <ul>
-    {{#each burgers}}
-    {{#unless this.devoured}}
-    <li>
-      <p>{{this.id}}. {{this.burger_name}}
-        <form method="PUT">
-          <input type="hidden" name="devoured" value="true">
-          <button type="submit" class="change-devour" data-id="{{id}}" data-newDevourState=true>
-            {{#if devoured}}Devour? {{else}}Devour It!{{/if}}</button>
-        </form>
-      </p>
-    </li>
-    {{/unless}}
-    {{/each}}
-  </ul>
-</section>
-</div>
+  <div class="jumbotron">
+    <div class="row">
+      <div id="devoured" class="col-5">
+        <section class="devoured">
+          <h2>Available Burgers!</h2>
+          <ul>
+            {{#each burgers}}
+            {{#unless this.devoured}}
+            <li>
+              <p>{{this.id}}. {{this.burger_name}}
+                <form method="PUT">
+                  <input type="hidden" name="devoured" value="true">
+                  <button type="submit" class="btn btn-warning class="change-devour" data-id="{{id}}" data-newDevourState=true>
+                    {{#if devoured}}Devour? {{else}}Devour It!{{/if}}</button>
+                </form>
+              </p>
+            </li>
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </section>
+      </div>
 
-<div class="col">
-<section class="add">
-  <h2>Devoured Burgers</h2>
+      <div class="col"></div>
 
-  <ul>
-    {{#each burgers}}
-      {{#if this.devoured}}
-        <li>
-          <p class="text-muted">{{id}}. {{burger_name}}</p>
-        </li>
-      {{/if}}
-    {{/each}}
-  </ul>
-</section>
-</div>
-</div>
+      <div id="eaten" class="col-5">
+        <section>
+          <h2>Devoured Burgers!</h2>
 
-<div class="row">
-  <div class="col"></div>
+          <ul>
+            {{#each burgers}}
+            {{#if this.devoured}}
+            <li>
+              <p id="burger_list" class="text-muted">{{id}}. {{burger_name}}</p>
+            </li>
+            {{/if}}
+            {{/each}}
+          </ul>
+        </section>
+      </div>
+    </div>
+<br>
+    <div class="row">
+      <div class="col"></div>
 
-  <div class="col">
-<section>
-<h2>Add a burger</h2>
-<form class="create-form" action="burgers/create" method="POST">
+      <div id="add" class="col">
+        <section>
+          <h2>Add a Burger</h2>
+          <form class="create-form" action="burgers/create" method="POST">
 
-  <div class="form-group">
-    <label for="burger">Burger Name:</label>
-    <input type="text" id="newburger" name="burger_name">
-  </div>
+            <div class="form-group">
+              <label for="burger">Burger Name:</label>
+              <input type="text" id="newburger" name="burger_name">
+            </div>
 
-  {{!-- <div class="form-group">
+            {{!-- <div class="form-group">
     <label for="devoured">Devoured?</label><br>
     <input type="radio" name="devoured" value="1"> Devoured!<br>
     <input type="radio" name="devoured" value="0" checked> Devour Da Burger!
   </div> --}}
 
-  <button type="submit">Add Da Burger</button>
-</form>
-</section>
-</div>
-<div class="col"></div>
-</div>
-
+            <button id="add-btn" class="btn btn-warning type="submit">Submit Da Burger</button>
+          </form>
+          <br>
+        </section>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
 </div>
