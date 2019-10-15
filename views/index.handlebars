@@ -15,7 +15,7 @@
               <p>{{this.id}}. {{this.burger_name}}
                 <form method="PUT">
                   <input type="hidden" name="devoured" value="true">
-                  <button type="submit" class="btn btn-warning class="change-devour" data-id="{{id}}" data-newDevourState=true>
+                  <button type="submit" class="change-devour btn btn-warning" data-id="{{id}}" data-newDevourState="true">
                     {{#if devoured}}Devour? {{else}}Devour It!{{/if}}</button>
                 </form>
               </p>
