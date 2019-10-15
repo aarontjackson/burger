@@ -1,0 +1,12 @@
+section.devoured {
+    float: left;
+}
+
+section.add {
+    float: right;
+}
+
+.container {
+    background-image: url(../img/burger_background.jpeg);
+    
+}
