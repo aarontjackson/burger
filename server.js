@@ -2,7 +2,7 @@
 var express = require('express');
 
 // connection to Heroku & local host 
-var PORT = process.env.PORT || 8000;
+var PORT = process.env.PORT || 3000;
 
 // calling express connection as app
 var app = express();
